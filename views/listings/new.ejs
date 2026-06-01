@@ -1,0 +1,260 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+<div class="row">
+  <div class="col-8 offset-2">
+    <br /><br />
+    <H3>Create a New Listing</H3>
+    <form
+      method="POST"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          name="listing[title]"
+          placeholder="Add a Catchy Title"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title Looks Good</div>
+      </div>
+      <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a short Description</div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input
+          name="listing[image]"
+          type="file"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="listing[price]"
+            placeholder="Enter Price"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Price should be Valid</div>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            name="listing[country]"
+            placeholder="India"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Country name should be Valid</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          name="listing[location]"
+          placeholder="Hyderabad, Bengaluru,..."
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Location should be Valid</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Categories</label>
+
+        <div class="row">
+          <!-- <select name="listing[category]" class="form-select" multiple required>
+          <option value="Trending">Trending</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Iconic Cities">Iconic Cities</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Castles">Castles</option>
+          <option value="Swimming Pools">Swimming Pools</option>
+          <option value="Camping">Camping</option>
+          <option value="Farms">Farms</option>
+          <option value="Arctic">Arctic</option>
+          <option value="Beach">Beach</option>
+          <option value="Surfing">Surfing</option>
+          <option value="Cabins">Cabins</option>
+        </select> -->
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Trending"
+                name="listing[category]"
+                value="Trending"
+              />
+              <label class="form-check-label" for="Trending">Trending</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Rooms"
+                name="listing[category]"
+                value="Rooms"
+              />
+              <label class="form-check-label" for="Rooms">Rooms</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Iconic Cities"
+                name="listing[category]"
+                value="Iconic Cities"
+              />
+              <label class="form-check-label" for="Iconic Cities"
+                >Iconic Cities</label
+              >
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Mountains"
+                name="listing[category]"
+                value="Mountains"
+              />
+              <label class="form-check-label" for="Mountains">Mountains</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Castles"
+                name="listing[category]"
+                value="Castles"
+              />
+              <label class="form-check-label" for="Castles">Castles</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Swimming Pools"
+                name="listing[category]"
+                value="Swimming Pools"
+              />
+              <label class="form-check-label" for="Swimming Pools"
+                >Swimming Pools</label
+              >
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Camping"
+                name="listing[category]"
+                value="Camping"
+              />
+              <label class="form-check-label" for="Camping">Camping</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Farms"
+                name="listing[category]"
+                value="Farms"
+              />
+              <label class="form-check-label" for="Farms">Farms</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Arctic"
+                name="listing[category]"
+                value="Arctic"
+              />
+              <label class="form-check-label" for="Arctic">Arctic</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Beach"
+                name="listing[category]"
+                value="Beach"
+              />
+              <label class="form-check-label" for="Beach">Beach</label>
+            </div>
+          </div>
+
+          <!-- <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Surfing"
+                name="listing[category]"
+                value="Surfing"
+              />
+              <label class="form-check-label" for="Surfing">Surfing</label>
+            </div>
+          </div> -->
+
+          <div class="col-md-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="Cabins"
+                name="listing[category]"
+                value="Cabins"
+              />
+              <label class="form-check-label" for="Cabins">Cabins</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-dark add-btn mt-3 mb-3">Add</button>
+    </form>
+  </div>
+</div>
