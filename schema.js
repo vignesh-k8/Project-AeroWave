@@ -24,7 +24,6 @@ module.exports.listingSchema = Joi.object({
             "Farms",
             "Arctic",
             "Beach",
-            "Surfing",
             "Cabins",
           ),
         ),
