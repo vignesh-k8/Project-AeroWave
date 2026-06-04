@@ -89,10 +89,10 @@ body.dark-mode .filter:hover {
   color: white;
 }
 
-body.dark-mode .card:hover {
+/* body.dark-mode .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08);
-}
+} */
 
 /* For Footer */
 body.dark-mode .f-info {
