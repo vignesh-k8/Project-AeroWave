@@ -151,12 +151,3 @@ body {
 .form-check-input:checked {
   background-color: #fe424d !important;
 }
-
-.category-tag {
-  display: inline-block;
-  background: #f1f1f1;
-  padding: 4px 10px;
-  margin: 3px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
