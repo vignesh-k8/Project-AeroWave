@@ -19,15 +19,20 @@ body.dark-mode .navbar {
 }
 
 body.dark-mode .card {
-  /* background-color: #222;
+  /* background-color: #222; */
   color: white;
-  border-color: #444; */
+  border-color: #444;
   background-color: #1e1e1e;
   border: 1px solid #2d2d2d;
 }
 
 body.dark-mode .card-text {
   color: #ddd;
+}
+
+body.dark-mode .btn {
+  color: white;
+  border: 1px solid white;
 }
 
 body.dark-mode .form-control {
@@ -60,11 +65,9 @@ body.dark-mode .nav-link:hover {
   color: #ff5a5f !important;
 }
 
-body.dark-mode #tax-toggle,
-body.dark-mode .tax-info,
-body.dark-mode .form-check-label {
+body.dark-mode .tax-toggle {
   color: white !important;
-  border: 1px solid #444;
+  border: 1px solid white;
 }
 
 body.dark-mode #filters {
